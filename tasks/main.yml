@@ -1,0 +1,15 @@
+---
+- name: enable epel
+  yum: name=epel-release
+
+- name: install dependencies
+  yum: name={{item}}
+  with_items:
+    - initscripts
+    - nginx
+
+- name: create index.html
+  copy: dest=/usr/share/nginx/html/index.html
+        src=files/index.html
+  notify:
+    - restart nginx

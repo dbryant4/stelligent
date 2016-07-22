@@ -1,0 +1,13 @@
+---
+ansible:
+  playbook: playbook.yml
+
+docker:
+  containers:
+  - name: centos6
+    ansible_groups:
+      - group1
+    image: centos
+    image_version: 6
+    port_bindings:
+      80: 80
