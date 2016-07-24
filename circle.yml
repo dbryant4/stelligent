@@ -7,7 +7,7 @@ machine:
 
 dependencies:
   pre:
-    - pip install molecule
+    - pip install git+git://github.com/dbryant4/molecule.git@docker-ports
 
 test:
   override:
