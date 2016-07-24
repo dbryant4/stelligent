@@ -1,38 +1,39 @@
-Role Name
+Stelligent Role
 =========
 
-A brief description of the role goes here.
+This Ansible role installs Nginx and copies the `index.html` file found in the `files/` directory of this repo.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- CentOS 6
+- [Docker](https://www.docker.com/) ([Docker for mac](https://docs.docker.com/engine/installation/mac/#/docker-for-mac) if using on OSX)
+- Molecule from my development branch due to new features waiting to be merged: 
+   `pip install git+git://github.com/dbryant4/molecule.git@docker-ports`
+- Ansible which should have been installed by Molecule
 
-Role Variables
---------------
+Getting Started
+---------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+1. To get started, run `molecule converge`. This will create a docker container and will run the Ansible provisioner. This step might take a few minutes for the first time.
 
-Dependencies
-------------
+2. Once complete, point your browser to [http://127.0.0.1](http://127.0.0.1) to view the index page. If using Docker Machine, point your browser to that IP.
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+3. For automated tests, run `molecule verify` which will run all of the automated [Testinfra](https://github.com/philpep/testinfra) tests in the `tests/` directory.
 
-Example Playbook
-----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+4. To stop the Docker container, run `molecule destroy`.
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Derrick Bryant 
+
+dbryant4@gmail.com
+
+[http://dbryant.xyz](http://dbryant.xyz)
+
