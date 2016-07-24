@@ -1,7 +1,7 @@
 Stelligent Role
 =========
 
-[![Build Status](https://travis-ci.org/dbryant4/stelligent.svg?branch=master)](https://travis-ci.org/dbryant4/stelligent)
+[![CircleCI](https://circleci.com/gh/dbryant4/stelligent.svg?style=svg)](https://circleci.com/gh/dbryant4/stelligent)
 
 This Ansible role installs Nginx and copies the `index.html` file found in the `files/` directory of this repo.
 

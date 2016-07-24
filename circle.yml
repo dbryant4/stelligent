@@ -1,0 +1,14 @@
+# circle.yml
+machine:
+  python:
+    version: 2.7
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - pip install molecule
+
+test:
+  override:
+    - molecule test
